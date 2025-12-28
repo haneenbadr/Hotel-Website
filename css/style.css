@@ -1,0 +1,217 @@
+body{
+    margin: 0;
+    padding: 0;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   display: flex;
+   flex-direction: column;
+   gap:100px;
+}
+
+nav{
+    background-image: url("../assests/background.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+     background-color: rgba(0, 0, 0, 0.5);
+     background-blend-mode: overlay; 
+}
+
+.home{
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    /* text-align: center; */
+    align-items: center;
+    color: azure;
+}
+
+.home h2{
+    font-size:86px;
+    color: white;
+}
+
+.home h4{
+    font-size: 24px;
+    color: white;
+}
+
+.home button{
+    background-color: rgb(199, 97, 37);
+    padding: 15px 45px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+    font-size: larger;
+}
+
+.home button:hover{
+     background-color: rgba(255, 255, 255);
+     border: 1px solid rgb(199, 97, 37) ;
+     color:rgb(199, 97, 37) ;
+}
+
+.about-us{
+    display: flex;
+    justify-content: space-around;
+}
+
+.about-us .text{
+    width: 40%;
+}
+
+  h4{
+    color: dodgerblue;
+}
+
+  h2{
+    font-size: 48px;
+    color:rgb(79, 78, 78)
+}
+
+.about-us .text p{
+    color: grey;
+}
+
+.about-us .photos{
+    position: relative;
+      
+}
+
+.about-us .photos .img2{
+    position: absolute;
+    top: 50px;
+    right: 200px;
+     
+}
+.about-us .text a{
+    color: gray;
+    font-size: larger;
+}
+
+.our-offers{
+    margin-top: 100px;
+}
+.our-offers .cards{
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+
+.card h3{
+  font-size: 22px;
+  font-weight: 100;
+}
+
+.card li{
+  font-size: 18px;
+  color: gray;
+}
+ 
+
+.card button{
+  color: dodgerblue;
+  background-color: white;
+  border: 1px solid dodgerblue;
+  padding: 15px 30px;
+  text-align: center;
+  width: 100%;
+}
+
+.card button:hover{
+  color: white;
+  background-color: dodgerblue;
+}
+
+.card{
+    overflow: hidden;
+}
+.card img {
+  width: 100%;
+  transition: transform 0.5s ease;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+.food{
+    display: flex;
+    justify-content: space-around;
+}
+
+.food .text{
+    width: 40%;
+}
+
+.food .text p{
+    color: grey;
+}
+
+.food .photos{
+    position: relative;
+      
+}
+
+.food .photos .img2{
+    position: absolute;
+    top: 50px;
+    left: 200px;
+     
+}
+.food .text a{
+    color: gray;
+    font-size: larger;
+}
+
+
+.rooms{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 100vh;
+}
+
+.room{
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.room .bg{
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.7s ease;
+}
+
+.room1 .bg{ background-image: url("../assests/room1.png"); }
+.room2 .bg{ background-image: url("../assests/room2.png"); }
+.room3 .bg{ background-image: url("../assests/room3.png"); }
+.room4 .bg{ background-image: url("../assests/room4.png"); }
+
+ 
+
+.room:hover .bg{
+  transform: scale(1.15);
+}
+
+
+.info{
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  color: white;
+  z-index: 1;
+}
+
+.info span{
+  font-size: 14px;
+}
+
+.info h3{
+  font-size: 32px;
+  margin: 5px 0 0;
+}
+

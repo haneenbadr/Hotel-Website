@@ -1,0 +1,131 @@
+body{
+    margin: 0;
+    padding: 0;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   display: flex;
+   flex-direction: column;
+   gap:100px;
+}
+
+.roomPage{
+    background-image: url("../assests/RoomBackground.jpg");
+    background-position: center;
+    background-size: contain;
+    height: 80vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-blend-mode: overlay;
+}
+
+.roomPage .navbar{
+     background-color: rgb(0, 0, 0,0.8);
+}
+
+
+.roomPage .content{
+     position: absolute;
+     width: 30%;
+     top: 20%;
+     left: 35%;
+    text-align: center;
+    align-items: center;
+    color: rgb(255, 251, 240);
+}
+
+.content h2{
+    font-size:64px;
+    color: white;
+}
+
+.content h4{
+    font-size: 24px;
+    color: white;
+}
+
+.roomPage .content button{
+    background-color: rgb(199, 97, 37);
+    padding: 15px 45px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+    font-size: larger;
+}
+
+.roomPage .content button:hover{
+     background-color: rgba(255, 255, 255);
+     border: 1px solid rgb(199, 97, 37) ;
+     color:rgb(199, 97, 37) ;
+}
+
+.rooms{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  
+    gap: 50px;
+    padding: 50px;
+}
+
+
+.room{
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+ 
+.room img{
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+ 
+.room p{
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    color: white;
+    font-size: 26px;
+    z-index: 2;
+    margin: 0;
+}
+
+ 
+.room::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: 1;
+}
+
+ 
+.room:hover img{
+    transform: scale(1.15);
+}
+
+.btn1{
+    padding: 15px 30px ;
+     background-color:sienna ;
+      color: white; 
+      border: none ; 
+      border-radius: 5px;
+}
+
+.btn2{
+    padding: 15px 30px ;
+    background-color:rgb(255, 255, 255) ;
+    color: sienna; 
+    border: solid 1px sienna ;
+    border-radius: 5px;
+}
+
+.AskAnything .btn1:hover{
+  background-color:rgb(255, 255, 255) ;
+  color: sienna; border: solid 1px sienna ; 
+}
+
+.AskAnything .btn2:hover{
+  background-color:sienna ;
+  color: rgb(255, 255, 255);
+  border: solid 1px sienna ; 
+}

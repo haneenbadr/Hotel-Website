@@ -1,0 +1,29 @@
+footer{
+  height: 50vh;
+  background-color: black;
+  color: rgb(211, 211, 211);
+}
+
+footer .content{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.copyRight{
+  text-align: center;
+}
+
+footer .content input{
+  margin: 0;
+  padding: 7px 20px;
+  background-color: white;
+  border: none;
+}
+
+footer .content button{
+  margin: 0;
+  padding: 7px 20px;
+  background-color: rgb(227, 165, 137);
+  border: none;
+  color: rgb(35, 34, 34);
+}
