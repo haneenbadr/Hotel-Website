@@ -1,26 +1,47 @@
-const btn = document.getElementById("checkBtn");
+var checkinInput=document.getElementById("checkIn")
+var checkoutInput=document.getElementById("checkOut")
+var adultInput=document.getElementById("adult")
+var childrenInput=document.getElementById("children")
+var typeInput=document.getElementById("roomType")
+var confirm=document.getElementById("confirm")
 
-btn.addEventListener("click", function () {
-    const bookingData = {
-        checkIn: document.getElementById("checkIn").value,
-        checkOut: document.getElementById("checkOut").value,
-        adult: document.getElementById("adult").value,
-        children: document.getElementById("children").value,
-        roomType: document.getElementById("roomType").value
-    };
 
-    if (!bookingData.checkIn || !bookingData.checkOut) {
-        alert("Please select check-in and check-out dates");
+confirm.addEventListener("click",function() {
+    
+    if (!checkinInput.value || !checkoutInput.value || !adultInput.value || !childrenInput.value || !typeInput.value) {
+        alert('please fill all info⚠️');
         return;
     }
 
+    if (new Date(checkoutInput.value) <= new Date(checkinInput.value)) {
+        alert('check out date must after than check in date⚠️');
+        return;
+    }
+
+    var Book={
+     checkIn:checkinInput.value,
+     checkOut:checkoutInput.value,
+     adultNum:adultInput.value,
+     childNum:childrenInput.value,
+     type:typeInput.value
+    }
+
+     let bookings = JSON.parse(localStorage.getItem('hotelBookings') || '[]');
+     bookings.push(Book);
+     localStorage.setItem('hotelBookings', JSON.stringify(bookings));
+     alert("Reservation Done")
+     clear()
+    window.location.href = 'myRooms.html';
      
-    let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
- 
-    bookings.push(bookingData);
-
- 
-    localStorage.setItem("bookings", JSON.stringify(bookings));
-
-    alert("Booking data saved successfully!");
 });
+
+function clear(){
+ checkinInput.value="";
+ checkoutInput.value= "";
+ adultInput.value="";
+ childrenInput.value="";
+ typeInput.value="";
+}
+
+ 
+

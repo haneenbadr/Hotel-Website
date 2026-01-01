@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="../css/book.css">
 </head>
 <body>
+    
     <div class="container">
         <div class="check-box">
-            <h2>Check Availability</h2>
+            <h2>confirm Booking</h2>
     <div class="row">
         <div class="field">
             <label>Check in date</label>
@@ -20,17 +21,17 @@
             <label>Check out date</label>
             <input id="checkOut" type="date">
         </div>
-    </div>
+     </div>
             <div class="row">
                 <select  id="adult">
-                    <option>Adult</option>
+                    <option value="" selected disabled>Adult</option>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
                 </select>
     
                 <select id="children">
-                    <option>Children</option>
+                    <option value="" selected disabled>Children</option>
                     <option>0</option>
                     <option>1</option>
                     <option>2</option>
@@ -38,13 +39,13 @@
             </div>
     
             <select id="roomType">
-                <option>Room type</option>
+                <option value="" selected disabled>Room type</option>
                 <option>Luxury Room</option>
                 <option>Deluxe Room</option>
                 <option>Signature Room</option>
             </select>
-    
-            <button  id="checkBtn">Check Availability</button>
+             
+            <button id="confirm">Confirm</button>
         </div>
     </div>
 

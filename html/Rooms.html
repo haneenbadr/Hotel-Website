@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RELAX</title>
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>RELAX - Our Rooms</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/rooms.css">
     <link rel="stylesheet" href="../css/footer.css">
@@ -12,112 +12,141 @@
 <body>
 
     <div class="roomPage">
-     <div class="navbar">
-           <div class="links">
-        <a href="../index.html">Home</a>
-        <a href="html/Rooms.html">Rooms</a>
-        <a href="about.html">About</a>
-        <a href="Food.html">Food</a>
-        </div>
-       
-        <div class="logo">
-            <img style="width: 70px;" src="assests/logo.webp" alt="">
+        <div class="navbar">
+            <div class="links">
+                <a href="../index.html">Home</a>
+                <a href="Rooms.html">Rooms</a>
+                <a href="about.html">About</a>
+                <a href="Food.html">Food</a>
+            </div>
+           
+            <div class="logo">
+                <img style="width: 70px;" src="../assests/logo.webp" alt="">
+            </div>
+
+            <div class="icons">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
         </div>
 
-        <div class="icons">
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-twitter"></i>
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-whatsapp"></i>
+        <div class="content">
+            <H2>Our rooms</H2>
+            <h3>Spend the night in the heart of Bergen</h3>
+            <p>All our rooms have one thing in common – they are designed to ensure that your stay with us as relaxing and comfortable as possible.</p>
+            <a href="Book.html" target="_blank"><button>Book Now</button></a>  
         </div>
-     </div>
-
-     <div class="content">
-        <H2>Our rooms</H2>
-        <h3>Spend the night in the heart of Bergen</h3>
-        <p>All our rooms have one thing in common – they are designed to ensure that your stay with us as relaxing and comfortable as possible.</p>
-         <a href="Book.html" target="_blank"><button >Book</button></a>  
-     </div>
-
     </div>
 
-    <div class="rooms">
-        <div class="room">
-            <img src="../assests/Superior-King-Room-3-1024x688-1.jpg" alt="">
-            <p>Superior King</p>
-        </div>
+    <!-- Filter Section -->
+    <div class="filter-section">
+        <div class="filter-container">
+            <h2>Find Your Perfect Room</h2>
+            
+            <div class="filter-controls">
+                <div class="filter-group">
+                    <label for="filterType">
+                        <i class="fa-solid fa-bed"></i> Room Type
+                    </label>
+                    <select id="filterType" onchange="applyFilters()">
+                        <option value="all">All Types</option>
+                        <option value="luxury">Luxury Rooms</option>
+                        <option value="superior">Superior Rooms</option>
+                        <option value="standard">Standard Rooms</option>
+                        <option value="economy">Economy Rooms</option>
+                    </select>
+                </div>
 
-         <div class="room">
-            <img src="../assests/superior-twin.jpg" alt="">
-            <p>Superior Twin</p>
-        </div>
+                <div class="filter-group">
+                    <label for="filterPrice">
+                        <i class="fa-solid fa-dollar-sign"></i> Price Range
+                    </label>
+                    <select id="filterPrice" onchange="applyFilters()">
+                        <option value="all">All Prices</option>
+                        <option value="0-100">Under $100</option>
+                        <option value="100-200">$100 - $200</option>
+                        <option value="200-300">$200 - $300</option>
+                        <option value="300-500">$300 - $500</option>
+                        <option value="500+">$500+</option>
+                    </select>
+                </div>
 
-         <div class="room">
-            <img src="../assests/Bergen-Harbour-Standard-Queen-bedroom-scaled-e1648711820671.jpg" alt="">
-            <p>Standard Double</p>
-        </div>
+                <div class="filter-group">
+                    <label for="sortBy">
+                        <i class="fa-solid fa-sort"></i> Sort By
+                    </label>
+                    <select id="sortBy" onchange="applyFilters()">
+                        <option value="default">Default</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="name">Name A-Z</option>
+                    </select>
+                </div>
 
-         <div class="room">
-            <img src="../assests/Bergen-Harbour-Standard-Single-1-1024x614-1.webp" alt="">
-            <p>Standard Twin</p>
-        </div>
+                <button class="reset-btn" onclick="resetFilters()">
+                    <i class="fa-solid fa-rotate-right"></i> Reset
+                </button>
+            </div>
 
-         <div class="room">
-            <img src="../assests/13-1-1-scaled-1.jpg" alt="">
-            <p>Economy Single</p>
+            <div class="results-count">
+                <span id="resultsCount">Showing all rooms</span>
+            </div>
         </div>
+    </div>
 
-         <div class="room">
-            <img src="../assests/507-standard-room-1-scaled-1.jpg" alt="">
-            <p>Economy Double</p>
-        </div>
+    <div class="rooms" id="roomsContainer">
+       
     </div>
      
     <div class="AskAnything" style="text-align: center;">
-          <h3 style="font-size: 64px;">Spend the night <br> <span style="color: sienna;">in the heart of Sky</span></h3>
-           <p>We are here to help you.</p>
-           <a href="Book.html" target="_blank"> <Button class="btn1">Book Your Room</Button></a> 
-           <Button class="btn2">Ask Us Anything</Button>
+        <h3 style="font-size: 64px;">Spend the night <br> <span style="color: sienna;">in the heart of Sky</span></h3>
+        <p>We are here to help you.</p>
+        <a href="Book.html" target="_blank"><Button class="btn1">Book Your Room</Button></a> 
+        <Button class="btn2">Ask Us Anything</Button>
     </div>
 
-     <footer>
-      <div class="content">
-        <div class="part">
-          <h3>address</h3>
-          <p>200, Green road, Mongla,New Yor City USA</p>
-          <a href="" style="color: rgb(211, 211, 211);">Get Direction</a>
-        </div>
+    <footer>
+        <div class="content">
+            <div class="part">
+                <h3>address</h3>
+                <p>200, Green road, Mongla, New York City USA</p>
+                <a href="" style="color: rgb(211, 211, 211);">Get Direction</a>
+            </div>
 
-        <div class="part">
-          <h3>Reservation</h3>
-          <p>+10 367 267 2678</p>
-          <p>reservation@montana.com</p>
-        </div>
+            <div class="part">
+                <h3>Reservation</h3>
+                <p>+10 367 267 2678</p>
+                <p>reservation@montana.com</p>
+            </div>
 
-        <div class="part">
-          <h3>Navigation</h3>
-          <p>Home</p>
-          <p>Rooms</p>
-          <p>about</p>
-          <p>News</p>
-        </div>
+            <div class="part">
+                <h3>Navigation</h3>
+                <p>Home</p>
+                <p>Rooms</p>
+                <p>about</p>
+                <p>News</p>
+            </div>
 
-        <div class="part">
-          <h3>Newsletter</h3>
-          <div class="your mail">
-            <input type="text" placeholder="Enter your mail">
-            <button>Sign Up</button>
-            <p>Subscribe newsletter to get updates</p>
-          </div>
+            <div class="part">
+                <h3>Newsletter</h3>
+                <div class="your mail">
+                    <input type="text" placeholder="Enter your mail">
+                    <button>Sign Up</button>
+                    <p>Subscribe newsletter to get updates</p>
+                </div>
+            </div>
         </div>
-      </div>
-     <div class="copyRight">
-      <p>Copyright ©2025 All rights reserved </p>
+        <div class="copyRight">
+            <p>Copyright ©2025 All rights reserved </p>
             <i class="fa-brands fa-facebook"></i>
             <i class="fa-brands fa-twitter"></i>
             <i class="fa-brands fa-instagram"></i>
             <i class="fa-brands fa-whatsapp"></i>
-            </div>
+        </div>
     </footer>
+    
+    <script src="../js/roomsFilter.js"></script>
 </body>
 </html>
